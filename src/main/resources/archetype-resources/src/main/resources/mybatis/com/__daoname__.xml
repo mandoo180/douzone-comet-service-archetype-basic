@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="${package}.${daoname}">
+
+    <select id="list" parameterType="hashmap" resultType="hashmap">
+        SELECT *
+        FROM HR_EMP_MST
+        WHERE COMPANY_CD = #{companyCode}
+    </select>
+
+    <insert id="insert" parameterType="hashmap">
+        INSERT INTO HR_EMP_MST (
+            COMPANY_CD,
+            EMP_NO,
+            KOR_NM
+        ) VALUES (
+            {COMPANY_CD},
+            {EMP_NO},
+            {KOR_NM}
+        )
+    </insert>
+
+</mapper>

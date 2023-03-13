@@ -1,0 +1,34 @@
+<archetype-descriptor
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
+        xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 https://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd"
+        name="douzone-comet-service-archetype-basic">
+    <fileSets>
+        <fileSet filtered="true" packaged="true">
+            <directory>src/main/java</directory>
+        </fileSet>
+        <fileSet filtered="true">
+            <directory>src/main/resources</directory>
+        </fileSet>
+        <fileSet>
+            <directory>src/test/java</directory>
+        </fileSet>
+    </fileSets>
+    <requiredProperties>
+        <requiredProperty key="drs"/>
+        <requiredProperty key="module"/>
+        <requiredProperty key="menu"/>
+        <requiredProperty key="servicename">
+            <defaultValue>
+                ${menu}00100_${drs}Service
+            </defaultValue>
+        </requiredProperty>
+        <requiredProperty key="daoname">
+            <defaultValue>
+                ${menu}00100_${drs}Dao
+            </defaultValue>
+        </requiredProperty>
+    </requiredProperties>
+
+
+</archetype-descriptor>
